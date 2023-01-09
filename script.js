@@ -1,3 +1,5 @@
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -9,6 +11,10 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
+  $(".saveBtn").click(function() {
+    alert("Handler for " + this.parentNode.id + " .click() called.");
+  });
+
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -16,6 +22,8 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
+  var currHour = (dayjs().format('H'))
+  console.log(currHour)
   
 
 
@@ -29,5 +37,6 @@ $(function () {
 
   $('#currentDay').text(dayjs().format('dddd, MMMM D YYYY'));
 
-  
 });
+
+
