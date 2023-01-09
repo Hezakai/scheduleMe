@@ -1,5 +1,3 @@
-
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -11,7 +9,7 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-  $(".saveBtn").click(function() {
+  $(".saveBtn").click(function () {
     alert("Handler for " + this.parentNode.id + " .click() called.");
   });
 
@@ -22,21 +20,36 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  var currHour = (dayjs().format('H'))
-  console.log(currHour)
-  
-
+  n = 9
+  for (let i = n; i < 18; i++) {
+    y = $('#' + n)
+    console.log(y)
+    var currHour = (dayjs().format('H'))
+    console.log("Timeslot: " + n)
+    console.log("Current: " + currHour)
+    if (n < currHour) {
+      console.log("past")
+      $(y).attr("class", "row time-block past");
+    }
+    if (n == currHour) {
+      console.log("present")
+      $(y).attr("class", "row time-block present");
+    }
+    if (n > currHour) {
+      console.log("future")
+      $(y).attr("class", "row time-block future");
+    }
+    n++
+  }
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-  
+
 
   // TODO: Add code to display the current date in the header of the page.
 
   $('#currentDay').text(dayjs().format('dddd, MMMM D YYYY'));
 
 });
-
-
