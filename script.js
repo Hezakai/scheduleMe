@@ -13,8 +13,7 @@ $(function () {
   //loops through the each block and changes the background color based on comparison to current time
   for (let i = 9; i < 18; i++) {
     hourID = $('#' + i)
-    // var currHour = (dayjs().format('H'))
-    var currHour = (12)
+    var currHour = (dayjs().format('H'))
     if (i < currHour) {
       $(hourID).attr("class", "row time-block past");
     }
