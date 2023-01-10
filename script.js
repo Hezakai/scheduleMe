@@ -1,5 +1,3 @@
-
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -52,7 +50,15 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-
+  for (let i = 9; i < 18; i++) {
+    txtArea = $('#' + i + "txt")
+    console.log(txtArea)
+    storedTxt = localStorage.getItem(i);
+    if (storedTxt !== null) {
+      console.log(storedTxt)
+      $(txtArea).val(storedTxt);
+      }
+  }
 
   // TODO: Add code to display the current date in the header of the page.
 
